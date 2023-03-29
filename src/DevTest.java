@@ -16,6 +16,25 @@ public class DevTest
         favInt = SafeInput.getInt(in, "Enter your favorite integer: ");
         favDouble = SafeInput.getDouble(in, "Enter your favorite double: ");
 
+        Scanner input = new Scanner(System.in);
+
+        // Get birth year
+        int year = SafeInput.getRangedInt(input, "Enter the year of your birth", 1950, 2015);
+
+        // Get birth month
+        int month = SafeInput.getRangedInt(input, "Enter the month of your birth", 1, 12);
+
+        // Get birthday
+        int day = SafeInput.getRangedInt(input,"Enter the day of your birth", 1, 31);
+
+        // Get birth hour
+        int hour = SafeInput.getRangedInt(input, "Enter the hour of your birth", 1, 24);
+
+        // Get birth minute
+        int minute = SafeInput.getRangedInt(input, "Enter the minute of your birth", 1, 59);
+
+
+
     }
 
 
