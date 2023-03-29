@@ -105,7 +105,7 @@ public class SafeInput
             System.out.print(prompt + " [Y/N]: ");
             input = pipe.nextLine().toUpperCase();
         } while (!input.equals("Y") && !input.equals("N"));
-        return input.equals("Y");
+        return input.equals("True");
     }
     public static String getRegExString(Scanner pipe, String prompt, String regEx) {
         String input = "";
@@ -118,6 +118,21 @@ public class SafeInput
             pipe.reset(); // Clear any delimiter from the pipe
         } while (!input.matches(regEx));
         return input;
+    }
+    public static void prettyHeader(String msg) {
+        int msgLength = msg.length();
+        int padding = (60 - msgLength - 6) / 2; // 6 = 3 stars on each side
+        String paddingStr = "";
+        for (int i = 0; i < padding; i++) {
+            paddingStr += " ";
+        }
+        String header = "";
+        for (int i = 0; i < 60; i++) {
+            header += "*";
+        }
+        System.out.println(header);
+        System.out.println("***" + paddingStr + msg + paddingStr + "***");
+        System.out.println(header);
     }
 
 
